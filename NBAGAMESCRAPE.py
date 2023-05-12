@@ -19,10 +19,10 @@ def scrape_year_data(years):
         url = f"https://www.basketball-reference.com/leagues/NBA_{year}_games.html"
 
         html = urlopen(url)
-
+        time.sleep(10)
         soup = BeautifulSoup(html, features="lxml")
 
-        titles = [th.getText() for th in soup.findAll('thead', limit=1)[0].findAll('th')]
+        titles = [th.getText() for th in soup.findAll('thead', limit=1)[0].findAll('th')][0:]
 
         headers = titles[0:9]
 
@@ -46,6 +46,6 @@ def scrape_year_data(years):
             
 
     print(game_stats2.info)
-    game_stats2.to_csv("nba_game_data5.csv", index=False)
+    game_stats2.to_csv("nba_game_data2022.csv", index=False)
 
 scrape_year_data(years=[1999])
