@@ -28,7 +28,7 @@ def scrape_year_data(years):
 
         rows = soup.findAll('tr')[1:]
 
-        #game_stats["Date"] = [[th.getText() for th in rows[i].findAll('th')] for i in range(len(rows))]
+
 
         game_stats = [[td.getText() for td in rows[i].findAll('td')] for i in range(len(rows))]
 
