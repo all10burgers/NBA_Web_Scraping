@@ -32,16 +32,13 @@ def scrape_year_data(years):
 
         game_stats = [[td.getText() for td in rows[i].findAll('td')] for i in range(len(rows))]
 
-        #game_stats = [e for e in game_stats if e != []]
+        
 
         game_stats2 = pd.DataFrame(game_stats, columns = headers)
-        #game_stats2.drop("Date", axis=1, inplace=True)
+        
         #game_stats2["Date"] = [[th.getText() for th in rows[i].findAll('th')] for i in range(len(rows))]
 
 
-        #game_stats2.drop("Notes", axis=1, inplace=True)
-
-        #final_df = final_df.append(game_stats2)
 
 
 
